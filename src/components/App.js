@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
-import Schedule from './Schedule';
-import Produce from './Produce';
-import ProduceList from './ProduceList';
+import ScheduleControl from './ScheduleControl';
 import ProduceControl from './ProduceControl';
+import Calendar from './Calendar';
+import 'react-calendar/dist/Calendar.css';
 
 function App() {
+  const [date, setDate] = useState(new Date());
+
   return (
     <>
       <Header />
-      <Schedule />
+      <Calendar onChange={() => setDate()} value={date}/>
+      <ScheduleControl />
       <ProduceControl />
     </>
   );
