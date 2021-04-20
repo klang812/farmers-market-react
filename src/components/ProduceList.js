@@ -276,7 +276,11 @@ function ProduceList(){
     <>
       {availableProduce.map((produce, index) =>
         <Produce month={produce.month}
-          selection={produce.selection}
+          selection={produce.selection.map((item) =>
+            <ul>
+              <li>{item}</li>
+            </ul>
+            )}
           key={index}/>
       )}
     </>
